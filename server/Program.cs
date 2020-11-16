@@ -13,7 +13,7 @@ namespace server
         public static CoreSettings _CoreSettings = new CoreSettings();
         public static DateTime _StartTime;
         public static List<scripting.Script> Scripts;
-
+        public static IniFile configFile;
         static void Main(string[] args)
         {
             //Note down the current time of the program start, needed for logs
@@ -73,6 +73,9 @@ namespace server
                             {
                                 i++;
                                 _CoreSettings._SettingFile = args[i];
+                                if (!File.Exists(args[i]))
+                                    File.Create(args[i]);
+                                else configFile = new IniFile(args[i]);
                                 Log.WriteLine(args[i], Color.Yellow);
                                 break;
                             }
