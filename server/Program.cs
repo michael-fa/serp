@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 
-namespace server
+namespace servers
 { //Testcommit
     class Program
     {
