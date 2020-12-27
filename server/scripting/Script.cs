@@ -8,7 +8,7 @@ namespace server.scripting
     public class Script
     {
         public string _amxFile = null;
-        AMX amx;
+        public AMX amx;
 
         public Script(string _amxFile)
         {
@@ -29,8 +29,8 @@ namespace server.scripting
 
             amx.ExecuteMain();
 
-            //AMXPublic p = amx.FindPublic("OnStart");
-            //p.Execute();
+            AMXPublic p = amx.FindPublic("OnLoad");
+            if(p != null) p.Execute();
 
             server.Program.Scripts.Add(this);
             return;
@@ -40,6 +40,7 @@ namespace server.scripting
         {
             amx.Register("printc", (amx1, args1) => Natives.printc(amx1, args1, this));
             amx.Register("LoadScript", (amx1, args1) => Natives.loadscript(amx1, args1, this));
+            amx.Register("UnloadScript", (amx1, args1) => Natives.unloadscript(amx1, args1, this));
 
 
             return true;

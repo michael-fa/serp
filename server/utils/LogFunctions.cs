@@ -12,7 +12,7 @@ namespace server.utils
             bool isDebug = false;
             string built_message = null;
             if (_msg.Length < 1 || loglevel > 4 || loglevel < -1) return;
-            switch (loglevel)
+            switch (loglevel) 
             {
                 case 0: built_message = "[INFO] " + _msg; break;
                 case 1: built_message = "[WARNING] " + _msg; break;
@@ -60,6 +60,7 @@ namespace server.utils
         public static void Print(Exception e)
         {
             Console.WriteLine("---------------------------------------\n[EXCEPTION] " + e.Message + "\n" + e.Source + "\n" + e.StackTrace + "\n---------------------------------------\n");
+            File.AppendAllTextAsync("Logs/current.txt", "---------------------------------------\n[EXCEPTION] " + e.Message + "\n" + e.Source + "\n" + e.StackTrace + "\n-------------------------------------- -\n");
         }
     }
 }
