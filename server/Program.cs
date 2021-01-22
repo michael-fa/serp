@@ -7,8 +7,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 
-namespace servers
-{ //Testcommit
+namespace server
+{
     class Program
     {
         public static CoreSettings _CoreSettings = new CoreSettings();

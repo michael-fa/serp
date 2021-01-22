@@ -21,6 +21,11 @@
   <ItemGroup>
     <PackageReference Include="AMXWrapper" Version="1.1.0" />
     <PackageReference Include="Colorful.Console" Version="1.2.11" />
+    <PackageReference Include="MySql.Data" Version="8.0.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\NewGoods\" />
   </ItemGroup>
 
 </Project>

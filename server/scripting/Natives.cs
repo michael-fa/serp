@@ -35,5 +35,22 @@ namespace server.scripting
             }
             return 1;
         }
+
+
+        public static int ConnectToDB(AMX amx1, AMXArgumentList args1, Script caller_script)
+        {
+
+            Core.Storage.DatabaseConnection DBConn = new Core.Storage.DatabaseConnection();
+            DBConn.Connect_ToDB(args1[0].AsString(), args1[1].AsString(), args1[2].AsString(), args1[3].AsString(), args1[4].AsInt32());
+            return 1;
+        }
+
+
+        public static int AddItem(AMX amx1, AMXArgumentList args1, Script caller_script)
+        {
+
+            return 1;
+        }
+
     }
 }

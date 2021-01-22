@@ -41,6 +41,7 @@ namespace server.scripting
             amx.Register("printc", (amx1, args1) => Natives.printc(amx1, args1, this));
             amx.Register("LoadScript", (amx1, args1) => Natives.loadscript(amx1, args1, this));
             amx.Register("UnloadScript", (amx1, args1) => Natives.unloadscript(amx1, args1, this));
+            amx.Register("ConnectToDB", (amx1, args1) => Natives.ConnectToDB(amx1, args1, this));
 
 
             return true;
